@@ -17,18 +17,38 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             children: [
-           Container(
-             height: 50,
-             decoration: BoxDecoration(
-               color: Colors.deepOrange,
-               borderRadius: BorderRadius.circular(10)
-             ),
-             child: Center(child: Text('Login', style: headingTextStyle)),
+              MYButton(title: 'Login',),
+              SizedBox(height: 10,),
 
-           )
-              ],
+
+
+            ],
           ),
         ),
+      ),
+    );
+
+
+  }
+}
+
+
+class MYButton extends StatelessWidget {
+
+  final String title;
+  const MYButton({Key? key, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Container(
+        height: 50,
+        decoration: BoxDecoration(
+          color: Colors.deepOrange,
+          borderRadius: BorderRadius.circular(10)
+        ),
+        child: Center(child: Text(title, style: TextStyle(fontSize: 18, color: whiteColor),)),
       ),
     );
   }
